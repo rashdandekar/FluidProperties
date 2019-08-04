@@ -2,7 +2,7 @@ require "./gas.rb"
 
 myinputs = Hash.new
 myinputs["name"] = "Dry Gas"
-myinputs["spgr"] = 0.699
+myinputs["spgr"] = 0.8
 
 # myinputs.each do
 #     |k,v|
@@ -13,4 +13,4 @@ myinputs["spgr"] = 0.699
 mygas = Gas.new(myinputs)
 puts mygas.name
 puts "Specific gravity is " << mygas.spgr.to_s
-puts mygas.zfactor(3000.00, 180.00)
+puts mygas.zfactor(1500, 100.00)

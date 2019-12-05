@@ -15,4 +15,5 @@ myinputs["h2s"] = 0.9
 mygas = Gas.new(myinputs)
 puts mygas.name
 puts "Specific gravity is " << mygas.spgr.to_s
-puts mygas.zfactor(4843, 206)
+mygas.get_zfactor(4843, 206)
+puts mygas.zfactor_g, mygas.b_g, mygas.rho_g

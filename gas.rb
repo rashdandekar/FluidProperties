@@ -68,9 +68,9 @@ class Gas
                 z_temp=z_new
             end
         end 
-        @zfactor_g=z_new
-        @b_g = 0.02827*@gaszfactor*(temp+459.67)/press
-        @rho_g = 28.9586*@spgr*press/(r * temp+459.67)
+        @zfactor_g = z_new
+        @b_g = 0.02827 * @zfactor_g * (temp+459.67) / press
+        @rho_g = 28.9586* @spgr * press / (r * (temp+459.67))
     end
 end
 

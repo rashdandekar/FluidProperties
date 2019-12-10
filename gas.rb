@@ -1,5 +1,5 @@
 class Gas
-    attr_reader :name, :spgr, :co2, :h2s, :n2, :gaszfactor
+    attr_reader :name, :spgr, :co2, :h2s, :n2, :zfactor_g, :b_g, :rho_g
     
     # def initialize(name)
     #     @name=name
@@ -27,7 +27,8 @@ class Gas
         }
     end
 
-    def zfactor(press, temp)
+    def get_zfactor(press, temp)
+        r = 10.73 #gas constant
         a1 = 0.3265
         a2 = -1.07
         a3 = -0.5339
@@ -67,10 +68,9 @@ class Gas
                 z_temp=z_new
             end
         end 
-
-
-
-        @gaszfactor=z_new
+        @zfactor_g=z_new
+        @b_g = 0.02827*@gaszfactor*(temp+459.67)/press
+        @rho_g = 28.9586*@spgr*press/(r * temp+459.67)
     end
 end
 
